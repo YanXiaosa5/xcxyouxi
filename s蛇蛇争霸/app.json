@@ -1,0 +1,26 @@
+{
+    "pages": [
+        "pages/ad/index",
+        "tradis/h5/h5",
+        "pages/jump/index",
+        "pages/ad/detail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#3fb5d9",
+        "navigationBarTitleText": "蛇蛇争霸",
+        "navigationBarTextStyle": "white"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+        "plugins": {
+          "tencentvideo": {
+            "version": "1.1.6",
+            "provider": "wxa75efa648b60994b"
+          }
+        }
+}

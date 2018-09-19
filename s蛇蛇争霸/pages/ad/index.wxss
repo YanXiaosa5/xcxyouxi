@@ -1,0 +1,346 @@
+
+.container{
+  padding: 0;
+  background: #1664b2;
+}
+.top{
+  width: 750rpx;
+  height: 705rpx;
+  position: relative;
+}
+.top image{
+  width: 750rpx;
+  height: 705rpx;
+}
+.top button{
+  width: 395rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 414rpx;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  border:none;
+  margin: 0 auto;
+}
+.top button.moregame{
+  top: 554rpx;
+}
+.top button::after{
+  width: 0;
+  height: 0;
+
+}
+.top button image{
+  width: 395rpx;
+  height: 120rpx;
+}
+
+.third-party{
+  width: 100%;
+  height: 150rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 690rpx;
+}
+.third-party .item{
+  width: 216rpx;
+  height: 150rpx;
+  display: inline-block;
+  margin: 0 10rpx;
+}
+.third-party .item image{
+  width: 216rpx;
+  height: 150rpx;
+}
+
+.adbox{
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 160rpx;
+}
+
+.comment-top{
+  padding: 45rpx 30rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+
+}
+.comment-top image{
+  width: 41rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.comment-top text{
+  vertical-align: middle;
+  font-size: 36rpx;
+  color: #ffffff;
+}
+
+.index-container {
+  position: relative;
+  padding-bottom: 86rpx;
+  /* padding: 0 24rpx; */
+  /* background-color: #fff; */
+}
+.bot{
+  width: 750rpx;
+  height:418rpx;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.bot image{
+  width: 750rpx;
+  height: 418rpx;
+  display: block;
+
+}
+.index-header {
+  text-align: center;
+  font-weight: normal;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #757575;
+  /* margin-top: 5rpx; */
+}
+
+/*   index   swiper  */
+
+swiper.index-swiper {
+  position: relative;
+  height: 420rpx;
+}
+swiper.index-swiper  button{
+border-radius: 0;
+}
+
+swiper .swiper-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+swiper image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+swiper .swiper-desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(63, 76, 88, 0.3)100%);
+  color: #fff;
+  line-height: 150rpx;
+  margin: 0 auto;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+ /* height: 120rpx; */
+  text-shadow: 0px 0px 16px #646d75;
+}
+
+/*   index   swiper  end  */
+
+.search-button {
+  border-left: 0 !important;
+  border-top: 1px solid #fff !important;
+  border-right: 1px solid #fff !important;
+  border-bottom: 1px solid #fff !important;
+  background-color: #fff !important;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: #296fd0 !important;
+  width: 20%;
+  margin: 0 !important;
+  box-shadow: 1px 1px 6px #ecf0f0;
+}
+
+.search-button icon {
+  position: absolute;
+  margin: 28rpx 16rpx;
+}
+
+.search-input {
+  background-color: #fff;
+  padding: 16rpx 0 16rpx 32rpx;
+  min-height: 1rem;
+  font-size: 30rpx;
+  /*  position: absolute;*/
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /* border: 1px solid #ededed;  */
+  border-right: 0 !important;
+  height: 48rpx;
+  width: 80%;
+  text-align: left;
+  box-shadow: 1px 1px 6px #ecf0f0;
+}
+
+.share-button {
+  border: 1px solid #eee !important;
+  color: #296fd0 !important;
+  left: 10rpx;
+  height: 100rpx;
+  width: 200rpx;
+}
+
+.search-pancel {
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f7f7;
+  padding: 24rpx 24rpx;
+}
+
+.search-pancel image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+
+
+.top-Nav{
+display: flex;
+padding: 25rpx 0;
+background: #fff;
+justify-content:space-around;
+border-bottom: 1px solid #eee;
+
+}
+.top-item{
+text-align: center;
+}
+.top-item image{
+width: 88rpx;
+height: 88rpx;
+}
+.top-item text{
+line-height: 20rpx;
+font-size: 14px;
+}
+button.gamebg::after{
+  width: 0;
+  height: 0;
+}
+.gamebg{
+  width: 750rpx;
+  height: 320rpx;
+  background:url(http://p3d3ii583.bkt.clouddn.com/syq_banner.jpg);
+  background-size:100% 100%;
+  background-repeat: no-repeat; 
+  border-radius: 0;
+}
+
+.container.active{
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.index-container {
+  padding: 0 24rpx;
+  padding-bottom: 286rpx;
+}
+
+
+.sharebtn{
+  width: 140rpx;
+  height: 68rpx;
+  position: fixed;
+  right: 0;
+  bottom: 100rpx;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: none;
+
+}
+.sharebtn::after{
+  width: 0;
+  height: 0;
+}
+.sharebtn image{
+  width: 140rpx;
+  height: 68rpx;
+}
+
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #000000;
+  opacity: 0.8;
+}
+
+.sc_move{
+  width: 160rpx;
+  height: 130rpx;
+  position: fixed;
+  top: 0;
+  right: 60rpx;
+  animation:sc  1s linear 0s infinite alternate;
+}
+.sc_move image{
+  width: 160rpx;
+  height: 130rpx;
+}
+.hand{
+  width: 82rpx;
+  height: 126rpx;
+  position: fixed;
+  top: 0;
+  right: 90rpx;
+}
+.hand image{
+  width: 82rpx;
+  height: 126rpx;
+}
+.sctip{
+  width: 600rpx;
+  height: 280rpx;
+  position: fixed;
+  top: 150rpx;
+  right: 0rpx;
+  left: 0;
+  margin: 0 auto;
+
+}
+.sctip image{
+  width: 600rpx;
+  height: 280rpx;
+}
+
+@keyframes feiting{
+  0% { bottom:110rpx; right: 10rpx;}
+  10% { bottom:107rpx; right: 15rpx;}
+  20% { bottom:115rpx; right: 20rpx;}
+  40% { bottom:120rpx; right: 30rpx;}
+  60% { bottom:115rpx; right: 40rpx;}
+  80% { bottom:110rpx; right: 50rpx;}
+  100% { bottom:120rpx; right: 60rpx;}
+}
+
+@keyframes sc{
+  0% { transform: rotate(-30deg);transform-origin: center top;}
+  100% {  transform: rotate(30deg);transform-origin: center top;}
+}

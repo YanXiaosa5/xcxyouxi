@@ -1,0 +1,20 @@
+<!--pages/jump/index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class="container">
+    <view class="container">
+
+            <view class="content-article-detail" style="display:{{display}}">
+            <view class="entry-summary entry-summary1">
+
+                <template is="wxParse" data="{{wxParseData:article1.nodes}}" />
+
+            </view>
+
+
+          
+
+        </view>
+
+    </view>
+</view>

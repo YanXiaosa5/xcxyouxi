@@ -1,0 +1,88 @@
+<!-- 基础模板 -->
+<template name="wxa">
+  <block>
+      <image src="{{item2.image}}" mode="{{item2.mode}}" data-linkType="wxa" data-path="{{item2.path}}" data-appid="{{item2.appid}}" data-union_id="{{item2.union_id}}" data-creative_id="{{item2.creative_id}}" bindtap="tradisTap" style="width:100%; height:100%;"></image>
+      <image src='https://r.d1fm.com/r.gif?union_id={{item2.union_id}}&creative_id={{item2.creative_id}}&openid={{item2.openid}}&action=view&_t={{item2._t}}' style='width:0rpx;height:0rpx'></image>
+  </block>
+</template>
+
+<template name="h5">
+  <block>
+      <image src="{{item2.image}}" mode="{{item2.mode}}" data-linkType="h5" data-path="{{item2.path}}" data-union_id="{{item2.union_id}}"  data-creative_id="{{item2.creative_id}}" bindtap="tradisTap" style="width:100%; height:100%;"></image>
+      <image src='https://r.d1fm.com/r.gif?union_id={{item2.union_id}}&creative_id={{item2.creative_id}}&openid={{item2.openid}}&action=view&_t={{item2._t}}' style='width:0rpx;height:0rpx'></image>
+  </block>
+</template>
+
+<template name="article">
+  <block>
+       <image src="{{item2.image}}" mode="{{item2.mode}}" data-linkType="article" data-path="{{item2.path}}" data-union_id="{{item2.union_id}}"  data-creative_id="{{item2.creative_id}}" bindtap="tradisTap" style="width:100%; height:100%;"></image>
+       <image src='https://r.d1fm.com/r.gif?union_id={{item2.union_id}}&creative_id={{item2.creative_id}}&openid={{item2.openid}}&action=view&_t={{item2._t}}' style='width:0rpx;height:0rpx'></image>
+  </block>
+</template>
+
+<template name="ad">
+  <block>
+     <ad style="width:100%; height:100%;" unit-id="{{item2.unit_id}}" data-linkType="ad" data-unitid="{{item2.unit_id}}" data-union_id="{{item2.union_id}}" data-creative_id="{{item2.creative_id}}" bindtap="tradisTap" binderror="tradisError" bindload="tradisLoad" wx:if="{{!item2.ad.show}}"></ad>
+    <image style="width:100%; height:100%;" src="{{item2.ad.img}}" data-linkType="wxa" data-path="{{item2.ad.path}}" data-appid="{{item2.ad.appid}}" data-union_id="{{0}}" data-creative_id="{{0}}" bindtap="tradisTap" style="width:100%; height:100%;" wx:if="{{item2.ad.show}}"></image>
+    <image src='https://r.d1fm.com/r.gif?union_id={{item2.union_id}}&creative_id={{item2.creative_id}}&openid={{item2.openid}}&action=view&_t={{item2._t}}' style='width:0rpx;height:0rpx'></image>
+   
+  </block>
+</template>
+
+
+<!-- 顶部广告位置 -->
+<template name="topBanner">
+     
+    <block wx:for="{{item.content}}" wx:key="" wx:for-item="item2" wx:if="{{item.status&&item.show}}">
+        <view style="width:{{item.width}};height:{{item.height}}; position:fixed;left:0;top:0;">
+          <template  is="{{item2.type}}" data="{{item2}}"></template>
+        </view>
+    </block>
+</template>
+
+<!-- 底部广告位置 -->
+<template name="btmBanner">
+    <block wx:for="{{item.content}}" wx:key="" wx:for-item="item2" wx:if="{{item.status&&item.show}}">
+        <view style="width:{{item.width}};height:{{item.height}}; position:fixed;left:0;bottom:0;">
+          <template  is="{{item2.type}}" data="{{item2}}"></template>
+        </view>
+    </block>
+</template>
+
+<!-- 内容页广告位置 -->
+<template name="innerBanner">
+  <block wx:for="{{item.content}}" wx:key="" wx:for-item="item2" wx:if="{{item.status&&item.show}}">
+        <view style="width:{{item.width}};height:{{item.height}}; position:static;">
+          <template  is="{{item2.type}}" data="{{item2}}"></template>
+        </view>
+    </block>
+</template>
+
+
+<!-- 侧边广告位置 -->
+<template name="sideFloat">
+   <block wx:for="{{item.content}}" wx:key="" wx:for-item="item2" wx:if="{{item.status&&item.show}}">
+        <view style="{{item.style}}">
+          <template  is="{{item2.type}}" data="{{item2}}"></template>
+        </view>
+    </block>
+</template>
+
+
+
+<!-- 入口 -->
+<template name="adlist">
+  <block wx:for="{{rawdata}}" wx:key="item" wx:if="{{item.type!='innerBanner'}}" >
+    <template is="{{item.type}}" data="{{item}}" />
+  </block>
+</template>
+
+<template name="adinner">
+  <block wx:for="{{rawdata}}" wx:key="item" wx:if="{{item.type=='innerBanner'}}" wx:for-item="item">
+    <template is="{{item.type}}" data="{{item}}" />
+  </block>
+</template>
+
+<template name="adsingle">
+    <template is="{{item.type}}" data="{{item}}" />
+</template>

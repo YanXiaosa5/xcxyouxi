@@ -1,0 +1,115 @@
+<!--pages/ad/index.wxml-->
+<import src="../../tradis/tradis.wxml"/>
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+<view class="container " style="padding-top:{{BHeight}};padding-bottom:{{BTHeight}}" >
+  <view class='top'>
+      <image src='../../images/bg.jpg'></image>
+      <button bindtap='play' wx:if="{{isSH}}">
+        <image src='../../images/play.png'></image>
+      </button>
+      <button class="moregame" bindtap='moreGame' wx:if="{{isSH}}">
+        <image src='../../images/moregame.png'></image>
+      </button>
+      <view class='third-party'>
+          <view class='item' wx:for="{{3}}" wx:for-item="topitem" wx:for-index="idx" >
+               <view class='cdadbox' wx:for="{{innerad}}" wx:for-item="item" wx:if="{{item.creative==idx}}" >
+                  <template is="adsingle"  data="{{item}}"/>
+              </view>
+          </view>
+      </view>
+  </view>
+  <view class='adbox' wx:for="{{innerad}}" wx:for-item="item" wx:if="{{item.creative==3}}" >
+      <template is="adsingle"  data="{{item}}"/>
+  </view>
+  <!-- <view class="index-header" style="display:{{displaySwiper}}" >
+    <swiper class="index-swiper" indicator-dots="true" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)">
+        <block wx:key="{{item.id}}" wx:for="{{postsShowSwiperList}}">
+             <form bindsubmit="redictDetail" report-submit='true' id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-linktype="{{item.post_type}}" data-path="{{item.post_permalink}}" data-appid="{{item.appid}}">
+            <swiper-item wx:if="{{item.post_type!='contact'}}" >
+               
+                    <button form-type="submit"  style="width: 750rpx;height: 420rpx;border: none;background: url('{{item.post_thumbnail_image}}');background-size:100% 100%;margin: 0;padding: 0;"></button>
+             
+            </swiper-item>
+             </form>
+
+            <swiper-item wx:if="{{item.post_type=='contact'}}">
+              <form bindsubmit="postFormID" report-submit='true'>
+              <button open-type='contact' form-type="submit" style="width: 750rpx;height: 420rpx;border: none;background: url('{{item.post_thumbnail_image}}');background-size:100% 100%;margin: 0;padding: 0;"></button>
+              </form>
+                
+                
+            </swiper-item>
+
+        </block>
+    </swiper>
+</view> -->
+  <view class='comment-top'>
+      <image src='../../images/icon_tv.png'></image>
+      <text>游戏资讯</text>
+  </view>
+  <!-- 加载图文列表 -->
+    <view class="index-container">
+       <view class="common-list">
+          <block wx:key="id" wx:for="{{postsList}}" wx:for-item="topitem" wx:for-index="idx">
+            <view class="list-item has-img" index="{{idx}}" id="{{topitem.id}}" bindtap="redictDetail">
+              <view class="content-title">
+                <text>{{topitem.title.rendered}}</text>
+              </view>
+              <view class="content-date">
+                <!-- <image src="../../images/calendar.png"></image>
+                  <text>{{item.date}}</text> 
+                  <image src="../../images/comments.png"></image>
+                  <text class="">{{item.total_comments}}</text>
+                  <image src="../../images/pageviews.png"></image>
+                  <text class="">{{item.pageviews}}</text>
+                  <image src="../../images/home-like.png"></image>
+                  <text class="">{{item.like_count}}</text>         -->
+              </view>
+              <image src="{{topitem.post_thumbnail_image}}" mode="aspectFill" class="cover"></image>
+              <!-- <image src='../../images/icon_play.png' class='playbtn'></image> -->
+            </view>
+            <view class='ad' wx:for="{{innerad}}" wx:for-item="item" wx:if="{{item.creative==idx&&item.creative>3}}" >
+                    <template is="adsingle"  data="{{item}}"/>
+            </view> 
+          </block>
+        </view>  
+
+        <view class="loadingmore" style="display:{{floatDisplay}}">
+            <view hidden="{{isLastPage}}">
+                <button class="more-button" formType="submit" size="mini" bindtap="loadMore">
+                  <image src='../../images/more.png'></image>
+                </button>
+            </view>
+            <view class="no-more" hidden="{{!isLastPage}}">- 我也是有底线的 -</view>
+        </view>
+        <!-- <view class="copyright" style="display:{{floatDisplay}}">
+            <template is="tempCopyright" />
+        </view> -->
+        
+    <view class='bot'>
+        <image src='../../images/bg2.png'></image>
+    </view>
+    </view>
+    
+    <view class='sc_move' bindtap='collect' wx:if="{{issc}}">
+        <image src='../../images/sc_moving.png'></image>
+    </view>
+
+    <view class='mask' wx:if="{{!issc}}" bindtap='closeSC'></view>
+    <view class='hand' wx:if="{{!issc}}" bindtap='closeSC'>
+        <image src='../../images/hand.png'></image>
+    </view>
+    <view class='sctip' wx:if="{{!issc}}" bindtap='closeSC'>
+        <image src='../../images/sc_tips_ios.png' wx:if="{{device==1}}"></image>
+         <image src='../../images/sc_tips_android.png'  wx:if="{{device==2}}"></image>
+    </view>
+
+    <button class='sharebtn' open-type='share'>
+        <image src='../../images/icon_sharebtn.png'></image>
+    </button>
+
+
+</view>
+<template is="adlist" data="{{rawdata:positionad}}"/>
